@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.generaltemplate.HelloController">
+  <tabs>
+    <Tab fx:id="tabPreGame" text="Pre-Game">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="lstTeamSelect" layoutX="14.0" layoutY="151.0" onKeyReleased="#handleSelectedTeamRatings2" onMouseClicked="#handleSelectedTeamRatings" prefHeight="133.0" prefWidth="161.0" />
+                  <Label layoutX="271.0" layoutY="24.0" text="Game Set-Up">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="129.0" text="Select Your Team:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstTeamSelectRatings" layoutX="186.0" layoutY="150.0" prefHeight="134.0" prefWidth="168.0" />
+                  <TextField fx:id="txtFirstName" layoutX="463.0" layoutY="166.0" prefHeight="37.0" prefWidth="225.0" promptText="input your first name" text="d" />
+                  <Label layoutX="364.0" layoutY="171.0" text="First Name:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="364.0" layoutY="217.0" text="Last Name:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtLastName" layoutX="463.0" layoutY="212.0" prefHeight="37.0" prefWidth="225.0" promptText="input your last name" text="p" />
+                  <Button layoutX="306.0" layoutY="372.0" mnemonicParsing="false" onAction="#handleSubmitSetUp" prefHeight="42.0" prefWidth="78.0" text="Submit">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="228.0" layoutY="129.0" text="Team Ratings">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="86.0" text="Context: You're a incoming rookie head coach. Select the team you wish to join and input your characters first and last name">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabHomePage" disable="true" onSelectionChanged="#handleHomeDisplays" text="Home">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#70ff21" height="56.0" layoutX="472.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="152.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffa1f" height="56.0" layoutX="291.0" layoutY="298.0" stroke="BLACK" strokeType="INSIDE" width="152.0" />
+                  <Button fx:id="btnPlayGame" layoutX="576.0" layoutY="395.0" mnemonicParsing="false" onAction="#handlePlayGame" prefHeight="49.0" prefWidth="120.0" text="Play Next Game">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <ListView fx:id="lstSchedule" layoutX="34.0" layoutY="96.0" prefHeight="156.0" prefWidth="188.0" />
+                  <Label layoutX="73.0" layoutY="71.0" text="Schedule:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstStandings" layoutX="34.0" layoutY="282.0" prefHeight="156.0" prefWidth="224.0" />
+                  <Label layoutX="107.0" layoutY="257.0" text="Standings:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fffc3" height="200.0" layoutX="482.0" layoutY="57.0" stroke="BLACK" strokeType="INSIDE" width="263.0" />
+                  <Label layoutX="540.0" layoutY="59.0" text="Opponent:">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lstTeamName" layoutX="300.0" layoutY="14.0" text="Bears">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblWeek" layoutX="82.0" layoutY="26.0" text="Week 1">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOpName" layoutX="494.0" layoutY="96.0" text="Name:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOpOffRating" layoutX="494.0" layoutY="132.0" text="Offense:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOpDefRating" layoutX="493.0" layoutY="174.0" text="Defense:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOpWinLossStreak" layoutX="493.0" layoutY="220.0" text="Streak:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOffRating" layoutX="307.0" layoutY="313.0" text="Offense:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDefRating" layoutX="487.0" layoutY="313.0" text="Defense:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblWinLossStreak" layoutX="258.0" layoutY="84.0" text="Streak:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="306.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleJumpToEnd" prefHeight="50.0" prefWidth="167.0" text="Cheat: Go to end of season" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tabOffice" disable="true" onSelectionChanged="#handleOfficeDisplays" text="Office">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdff92" height="275.0" layoutY="184.0" stroke="BLACK" strokeType="INSIDE" width="259.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1ffffa" height="276.0" layoutX="258.0" layoutY="183.0" stroke="BLACK" strokeType="INSIDE" width="454.0" />
+                  <ListView fx:id="lstDraftProspects" layoutX="384.0" layoutY="251.0" onMouseReleased="#handleDraftProspectSelect" prefHeight="200.0" prefWidth="188.0" />
+                  <Label layoutX="424.0" layoutY="226.0" text="Draft Prospects">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstDraftPositions" layoutX="285.0" layoutY="252.0" onMouseReleased="#handleDraftPositionsSelect" prefHeight="199.0" prefWidth="85.0" />
+                  <Label layoutX="304.0" layoutY="230.0" text="Positions" />
+                  <ListView fx:id="lstProspectGrades" layoutX="582.0" layoutY="251.0" prefHeight="200.0" prefWidth="124.0" />
+                  <Label layoutX="601.0" layoutY="230.0" text="Prospect Grades" />
+                  <Label layoutX="412.0" layoutY="195.0" text="Draft Central">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPlayerName" layoutX="34.0" layoutY="14.0" text="Coach: ">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstDraftPrioritiesSelected" layoutX="142.0" layoutY="222.0" onMouseReleased="#handleDraftPositionsSelect" prefHeight="199.0" prefWidth="107.0" />
+                  <ListView fx:id="lstDraftPriorities" layoutX="18.0" layoutY="222.0" onMouseReleased="#handleDraftPositionsSelect" prefHeight="199.0" prefWidth="108.0" />
+                  <Label layoutX="9.0" layoutY="204.0" text="Choose 3 Draft Priorities" />
+                  <Label layoutX="152.0" layoutY="204.0" text="Selected Priorities" />
+                  <Button layoutX="42.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleSelectDraftPriorities" text="Select" />
+                  <Button layoutX="170.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleDeselectDraftPriorities" text="Deselect" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabRoster" disable="true" onSelectionChanged="#handleRosterDisplays" text="Roster">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane layoutX="6.0" layoutY="1.0" prefHeight="459.0" prefWidth="530.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Defense">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ListView fx:id="lstDTChart" layoutX="200.0" layoutY="31.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="141.0" prefWidth="130.0" />
+                                    <Label layoutX="242.0" layoutY="14.0" text="DT Chart" />
+                                    <ListView fx:id="lstCBChart" layoutX="26.0" layoutY="267.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="141.0" prefWidth="130.0" />
+                                    <Label layoutX="68.0" layoutY="250.0" text="CB Chart" />
+                                    <ListView fx:id="lstLBChart" layoutX="366.0" layoutY="145.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="141.0" prefWidth="130.0" />
+                                    <Label layoutX="408.0" layoutY="128.0" text="LB Chart" />
+                                    <ListView fx:id="lstSSChart" layoutX="201.0" layoutY="267.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="141.0" prefWidth="130.0" />
+                                    <Label layoutX="243.0" layoutY="250.0" text="SS Chart" />
+                                    <Label layoutX="59.0" layoutY="84.0" text="Select Team" />
+                                    <ListView fx:id="lstRosterTeamSelectDef" layoutX="26.0" layoutY="101.0" onMouseReleased="#handleRosterSelectedTeamDef" prefHeight="141.0" prefWidth="130.0" />
+                                    <Label fx:id="lblRosterTeamSelectedDef" layoutX="14.0" layoutY="16.0" text="Bears">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Offense">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ListView fx:id="lstOLChart" layoutX="201.0" layoutY="73.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="243.0" layoutY="56.0" text="OL Chart" />
+                                    <ListView fx:id="lstQBChart" layoutX="200.0" layoutY="271.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="242.0" layoutY="253.0" text="QB Chart" />
+                                    <ListView fx:id="lstWRChart" layoutX="373.0" layoutY="73.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="415.0" layoutY="56.0" text="WR Chart" />
+                                    <ListView fx:id="lstTEChart" layoutX="27.0" layoutY="270.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="63.0" layoutY="253.0" text="TE Chart" />
+                                    <ListView fx:id="lstRBChart" layoutX="373.0" layoutY="270.0" onMouseReleased="#handleDisplayPlayerStats" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="416.0" layoutY="253.0" text="RB Chart" />
+                                    <ListView fx:id="lstRosterTeamSelectOff" layoutX="26.0" layoutY="73.0" onMouseReleased="#handleRosterSelectedTeamOff" prefHeight="145.0" prefWidth="131.0" />
+                                    <Label layoutX="60.0" layoutY="56.0" text="Select Team" />
+                                    <Label fx:id="lblRosterTeamSelectOff" layoutX="35.0" layoutY="14.0" text="Bears">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b1d9ff" height="397.0" layoutX="536.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7affcd" height="70.0" layoutX="536.0" layoutY="395.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+                  <Button fx:id="btnManualReorder" layoutX="562.0" layoutY="434.0" mnemonicParsing="false" onAction="#handleManualUpdate" text="Manual Reorder Chart" />
+                  <ListView fx:id="lstSelectedPlayerStats" layoutX="558.0" layoutY="70.0" prefHeight="126.0" prefWidth="147.0" />
+                  <Label layoutX="577.0" layoutY="50.0" text="Selected Player Stats" />
+                  <Label fx:id="lblUpgradeTokens" layoutX="559.0" layoutY="342.0" text="Upgrade Tokens: " />
+                  <ListView fx:id="lstSelectedPlayerUpgrades" layoutX="558.0" layoutY="216.0" prefHeight="123.0" prefWidth="147.0" />
+                  <Label layoutX="603.0" layoutY="198.0" text="Upgrades" />
+                  <Button fx:id="btnUpgradePlayer" layoutX="580.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleUpgradePlayer" text="Upgrade Player" />
+                  <Button fx:id="btnAutoReorder" layoutX="569.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleAutoUpdate" text="Auto Reorder Chart" />
+                  <ProgressBar fx:id="barXP" layoutX="549.0" layoutY="26.0" prefHeight="18.0" prefWidth="166.0" progress="0.0" />
+                  <Label layoutX="609.0" layoutY="9.0" text="XP BAR" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabGame" disable="true" text="Game">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" onKeyReleased="#handleKeyPressed" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0b3ff" height="633.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff96da" height="75.0" layoutX="433.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9bceff" height="64.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+                  <GridPane fx:id="gpane" gridLinesVisible="true" layoutX="33.0" layoutY="30.0" prefHeight="0" prefWidth="0" translateY="50.0">
+                  </GridPane>
+                  <Label fx:id="lblGameTitle" layoutX="177.0" layoutY="14.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnStartGame" layoutX="162.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleStartGame" prefHeight="33.0" prefWidth="93.0" text="Start Game" />
+                  <ListView fx:id="lstGameEvents" layoutX="608.0" layoutY="91.0" prefHeight="169.0" prefWidth="185.0" />
+                  <Label layoutX="635.0" layoutY="63.0" text="Game Events">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a7ff9d" height="91.0" layoutX="433.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+                  <Label fx:id="lblTeam1Game" layoutX="437.0" layoutY="262.0" text="Team 1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6db8ff" height="91.0" layoutX="608.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="185.0" />
+                  <Label fx:id="lblTeam2Game" layoutX="615.0" layoutY="262.0" text="Team 2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="timeOut11" disable="true" layoutX="513.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <RadioButton fx:id="timeout21" disable="true" layoutX="535.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <RadioButton fx:id="timeout31" disable="true" layoutX="557.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <Label layoutX="443.0" layoutY="315.0" text="Time Outs:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="615.0" layoutY="315.0" text="Time Outs:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="timeout12" disable="true" layoutX="688.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <RadioButton fx:id="timeout22" disable="true" layoutX="709.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <RadioButton fx:id="timeout32" disable="true" layoutX="733.0" layoutY="317.0" mnemonicParsing="false" selected="true" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f6ff94" height="122.0" layoutX="433.0" layoutY="138.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+                  <Button layoutX="437.0" layoutY="219.0" mnemonicParsing="false" onAction="#handleCallTimeout" prefHeight="33.0" prefWidth="84.0" text="Call Timeout" />
+                  <Label fx:id="lblTeam1Score" layoutX="573.0" layoutY="288.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="600.0" layoutY="271.0" prefHeight="56.0" prefWidth="18.0" text="-">
+                     <font>
+                        <Font name="System Bold" size="39.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTeam2Score" layoutX="625.0" layoutY="288.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPeriod" layoutX="443.0" layoutY="142.0" text="Period:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" layoutX="443.0" layoutY="161.0" text="Time:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffbd9e" height="182.0" layoutX="433.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" width="360.0" />
+                  <Label layoutX="560.0" layoutY="351.0" text="Choose Play">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstPlays" layoutX="442.0" layoutY="377.0" onMouseReleased="#handleSelectPlays" prefHeight="147.0" prefWidth="142.0" />
+                  <ImageView fx:id="imgPlays" fitHeight="150.0" fitWidth="169.0" layoutX="612.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="lblShotClock" layoutX="442.0" layoutY="179.0" text="Shot Clock:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDown" layoutX="442.0" layoutY="199.0" text="Down:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9efff8" height="166.0" layoutX="433.0" layoutY="530.0" stroke="BLACK" strokeType="INSIDE" width="359.0" />
+                  <Label layoutX="548.0" layoutY="530.0" text="Audible Routes">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstRouteAudible" layoutX="625.0" layoutY="571.0" onMouseReleased="#handleAudibleRoute" prefHeight="94.0" prefWidth="144.0" />
+                  <Label layoutX="622.0" layoutY="553.0" text="Audible Route Options">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstPlayerAudible" layoutX="448.0" layoutY="572.0" onMouseReleased="#handleSelectAudiblePlayer" prefHeight="101.0" prefWidth="125.0" />
+                  <Label layoutX="468.0" layoutY="553.0" text="Select Player">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPlayerAudible" layoutX="452.0" layoutY="674.0" text="Player Selected: None" />
+                  <Label layoutX="647.0" layoutY="665.0" text="Click R to flip route" />
+                  <Label layoutX="471.0" layoutY="64.0" text="Keyboard Controls" />
+                  <Label layoutX="446.0" layoutY="80.0" text="Click E to snap the ball">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="93.0" text="Click WASDF to throw to reciever">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="107.0" text="Click WASD to change direction">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="120.0" text="Click Q to scramble your QB">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="647.0" layoutY="679.0" text="Click T to smart route" />
+                  <Button fx:id="btnKickBall" layoutX="523.0" layoutY="219.0" mnemonicParsing="false" onAction="#handleKickBall" prefHeight="33.0" prefWidth="84.0" text="Kick the ball" />
+                  <Button layoutX="645.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleForceGameOver" text="Cheat: Force Game Over" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tabDraft" onSelectionChanged="#handleDraftDisplays" text="Draft">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6ffb2" height="127.0" layoutX="33.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" width="392.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2daff" height="127.0" layoutX="33.0" layoutY="205.0" stroke="BLACK" strokeType="INSIDE" width="392.0" />
+                  <ListView fx:id="lstProjectedDraftBoard" layoutX="540.0" layoutY="99.0" prefHeight="231.0" prefWidth="212.0" />
+                  <Label layoutX="551.0" layoutY="69.0" text="Projected Draft Board">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="308.0" layoutY="14.0" text="Draft Central">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOnClockRound" layoutX="45.0" layoutY="100.0" text="Round: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOnClockPick" layoutX="45.0" layoutY="133.0" text="Pick: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblOnClockTeam" layoutX="44.0" layoutY="164.0" text="Team: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLastTeam" layoutX="44.0" layoutY="231.0" text="Team: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="189.0" layoutY="205.0" text="Last Pick">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLastPlayer" layoutX="44.0" layoutY="292.0" text="Player Choosen: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLastPick" layoutX="44.0" layoutY="262.0" text="Pick: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="178.0" layoutY="84.0" text="On the clock">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstPickPlayerList" layoutX="541.0" layoutY="414.0" prefHeight="211.0" prefWidth="211.0" />
+                  <Label layoutX="599.0" layoutY="385.0" text="Pick Player">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstPickPositions" layoutX="410.0" layoutY="414.0" onMouseReleased="#handlePickPositions" prefHeight="211.0" prefWidth="110.0" />
+                  <Label layoutX="425.0" layoutY="385.0" text="Positions">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstDraftPicks" layoutX="247.0" layoutY="414.0" prefHeight="211.0" prefWidth="110.0" />
+                  <Label layoutX="255.0" layoutY="385.0" text="Draft Picks">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="lstDraftTeams" layoutX="15.0" layoutY="414.0" onMouseReleased="#handleDraftTeams" prefHeight="211.0" prefWidth="212.0" />
+                  <Label layoutX="93.0" layoutY="385.0" text="Teams">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="597.0" layoutY="642.0" mnemonicParsing="false" onAction="#handleDraftPlayer" text="Draft Player">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="400.0" layoutY="642.0" mnemonicParsing="false" onAction="#handleSkipToNext" text="Skip to next pick">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
