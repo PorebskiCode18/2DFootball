@@ -32,7 +32,7 @@
                      </font>
                   </Label>
                   <ListView fx:id="lstTeamSelectRatings" layoutX="186.0" layoutY="150.0" prefHeight="134.0" prefWidth="168.0" />
-                  <TextField fx:id="txtFirstName" layoutX="463.0" layoutY="166.0" prefHeight="37.0" prefWidth="225.0" promptText="input your first name" text="d" />
+                  <TextField fx:id="txtFirstName" layoutX="463.0" layoutY="166.0" prefHeight="37.0" prefWidth="225.0" promptText="input your first name" />
                   <Label layoutX="364.0" layoutY="171.0" text="First Name:">
                      <font>
                         <Font name="System Bold" size="18.0" />
@@ -43,7 +43,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtLastName" layoutX="463.0" layoutY="212.0" prefHeight="37.0" prefWidth="225.0" promptText="input your last name" text="p" />
+                  <TextField fx:id="txtLastName" layoutX="463.0" layoutY="212.0" prefHeight="37.0" prefWidth="225.0" promptText="input your last name" />
                   <Button layoutX="306.0" layoutY="372.0" mnemonicParsing="false" onAction="#handleSubmitSetUp" prefHeight="42.0" prefWidth="78.0" text="Submit">
                      <font>
                         <Font size="15.0" />
@@ -136,7 +136,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="306.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleJumpToEnd" prefHeight="50.0" prefWidth="167.0" text="Cheat: Go to end of season" />
+<!--                  <Button layoutX="306.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleJumpToEnd" prefHeight="50.0" prefWidth="167.0" text="Cheat: Go to end of season" />-->
                </children></AnchorPane>
       </content>
     </Tab>
@@ -385,7 +385,7 @@
                </children></AnchorPane>
         </content>
       </Tab>
-      <Tab fx:id="tabDraft" onSelectionChanged="#handleDraftDisplays" text="Draft">
+      <Tab fx:id="tabDraft" onSelectionChanged="#handleDraftDisplays" text="Draft" disable="true">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
